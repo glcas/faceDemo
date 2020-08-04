@@ -1,0 +1,2 @@
+include ':app'
+rootProject.name = "人脸识别Demo"
