@@ -1,6 +1,14 @@
 apply plugin: 'com.android.application'
 
 android {
+    signingConfigs {
+        release {
+            storeFile file('F:\\Codes\\Android\\demo.jks')
+            storePassword 'faceDemo'
+            keyAlias 'faceDemo'
+            keyPassword 'faceDemo'
+        }
+    }
     compileSdkVersion 30
     buildToolsVersion "30.0.0"
 
@@ -28,6 +36,7 @@ android {
                 cppFlags "-fexceptions"
             }
         }
+        signingConfig signingConfigs.release
     }
 
     buildTypes {
