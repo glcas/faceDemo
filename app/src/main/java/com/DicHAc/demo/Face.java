@@ -1,7 +1,8 @@
 package com.DicHAc.demo;
 
 /**
- * Created by hasee on 2017/12/19.
+ * Created by hasee on 2017/12/19,
+ * Edited by DicHAc on 2020/08/01.
  */
 
 public class Face {
@@ -15,7 +16,7 @@ public class Face {
     //人脸检测，返回了bbox，points等信息
     public native int[] FaceDetect(byte[] imageDate, int imageWidth, int imageHeight, int imageChannel);
 
-    // faceInfo的格式：[left,top,right,bottom,10*五点,……(重复）]
+    // faceInfo的格式：[faceNum,left,top,right,bottom,10*五点,……(重复）]
     public native int[] MaxFaceDetect(byte[] imageDate, int imageWidth, int imageHeight, int imageChannel);
 
     //人脸检测模型反初始化
@@ -31,5 +32,5 @@ public class Face {
     public native boolean SetTimeCount(int timeCount);
 
     //返回特征值,jfloatArray型
-    public native double FaceRecognize(byte[] faceDate1, int w1, int h1, int[] landmarks1);
+    public native float[] FaceRecognize(byte[] faceDate1, int w1, int h1, int[] landmarks1);
 }

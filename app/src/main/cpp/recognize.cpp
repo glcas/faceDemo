@@ -3,16 +3,16 @@
 //
 
 #include "recognize.h"
-#include "originMobileFace.mem.h"
-#include "originMobileFace.id.h"
+#include "mobilefacenet.mem.h"
+#include "mobilefacenet.id.h"
 
 namespace Face {
 
     Recognize::Recognize(const std::string &model_path) {
         std::string param_files = model_path + "/mobilefacenet.param";
         std::string bin_files = model_path + "/mobilefacenet.bin";
-        Recognet.load_param(originMobileFace_param_bin);
-        Recognet.load_model(originMobileFace_bin);
+        Recognet.load_param(mobilefacenet_param_bin);
+        Recognet.load_model(mobilefacenet_bin);
     }
 
     Recognize::~Recognize() {
@@ -28,9 +28,9 @@ namespace Face {
         ncnn::Extractor ex = Recognet.create_extractor();
         ex.set_num_threads(threadnum);
         ex.set_light_mode(true);
-        ex.input(originMobileFace_param_id::BLOB_data, img_);     // input node
+        ex.input(mobilefacenet_param_id::BLOB_data, img_);     // input node
         ncnn::Mat out;
-        ex.extract(originMobileFace_param_id::BLOB_fc1, out);     // output node
+        ex.extract(mobilefacenet_param_id::BLOB_fc1, out);     // output node
         ncnn::Mat test;
         for (int j = 0; j < 128; j++) {
             feature_out[j] = out[j];
@@ -253,27 +253,5 @@ namespace Face {
         ncnn::Mat out;
         warpAffineMatrix(img, out, M, image_w, image_h);
         return out;
-    }
-
-    double calculSimilar(std::vector<float> &v1, std::vector<float> &v2, int distance_metric) {
-        if (v1.size() != v2.size() || !v1.size())
-            return 0;
-        double ret = 0.0, mod1 = 0.0, mod2 = 0.0, dist = 0.0, diff = 0.0;
-
-        if (distance_metric == 0) {         // Euclidian distance
-            for (std::vector<double>::size_type i = 0; i != v1.size(); ++i) {
-                diff = v1[i] - v2[i];
-                dist += (diff * diff);
-            }
-            dist = sqrt(dist);
-        } else {                              // Distance based on cosine similarity
-            for (std::vector<double>::size_type i = 0; i != v1.size(); ++i) {
-                ret += v1[i] * v2[i];
-                mod1 += v1[i] * v1[i];
-                mod2 += v2[i] * v2[i];
-            }
-            dist = ret / (sqrt(mod1) * sqrt(mod2));
-        }
-        return dist;
     }
 }

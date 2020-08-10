@@ -385,7 +385,7 @@ void MTCNN::ONet() {
     }
 }
 
-#define TIMEOPEN 1 //设置是否开关调试，1为开，其它为关
+#define TIMEOPEN 0 //设置是否开关调试，1为开，其它为关
 
 void MTCNN::detect(ncnn::Mat &img_, std::vector<Bbox> &finalBbox_) {
     img = img_;

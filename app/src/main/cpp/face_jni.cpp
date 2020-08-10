@@ -309,8 +309,10 @@ Java_com_DicHAc_demo_Face_FaceRecognize(JNIEnv *env, jobject instance,
     ncnn::Mat ncnn_img1 = ncnn::Mat::from_pixels(faceImageCharDate1, ncnn::Mat::PIXEL_RGBA2RGB, w1,
                                                  h1);
 
-    //人脸对齐
+    // 对齐
     ncnn::Mat det1 = mRecognize->preprocess(ncnn_img1, mtcnnLandmarks1);
+    // 不对齐，仅伸缩变换
+    // ncnn::Mat det1 = ncnn::Mat::from_pixels_resize(faceImageCharDate1, ncnn::Mat::PIXEL_RGBA2RGB, w1, h1,112,112);
 
     std::vector<float> feature1;
     mRecognize->start(det1, feature1);
