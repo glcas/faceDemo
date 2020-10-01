@@ -1,22 +1,23 @@
 <resources>
-    <string name="app_name">Face Recognition Demo</string>
-    <string name="addFace">Add a new face</string>
-    <string name="editFace">Delete faces</string>
+    <string name="app_name">faceDemo</string>
+    <string name="addFace">Add a New Face</string>
+    <string name="editFace">Delete Faces</string>
     <string name="alertAddTitle">Add your face</string>
     <string name="confirm_text">Confirm</string>
-    <string name="dialog_add_content">Please make sure your face is completely visible on the screen</string>
+    <string name="dialog_add_content">Please make sure your face is completely visible on the screen.</string>
     <string name="hintName">Enter your name here</string>
     <string name="addButton">Add</string>
     <string name="noFaceToast">No face found, please try again.</string>
-    <string name="existedToast">Your face information is already in the database, please do not add it repeatedly!</string>
-    <string name="addSuccessToast">Added successfully</string>
+    <string name="existedToast">Your face is already in the database, please don\'t add it repeatedly.</string>
+    <string name="addSuccessToast">Added successfully!</string>
     <string name="cancel_text">Cancel</string>
-    <string name="noInfo">You haven\'t stored any faces</string>
-    <string name="selectFaces">Please select the faces you want to delete:</string>
+    <string name="noInfo">You haven\'t stored any faces.</string>
+    <string name="selectFaces">Please select faces you want to delete:</string>
     <string name="delText">Delete</string>
     <string name="noChosenText">You haven\'t selected any faces!</string>
-    <string name="delSuccess">\'s face successfully</string>
+    <string name="delSuccess">" successfully"</string>
     <string name="addTitle">Please enter your name:</string>
-    <string name="emptyNameToast">Please enter your name</string>
+    <string name="emptyNameToast">Please enter your name!</string>
     <string name="sepText">", "</string>
+    <string name="delToastText">"Delete face(s) of "</string>
 </resources>

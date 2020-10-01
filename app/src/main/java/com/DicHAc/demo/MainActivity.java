@@ -289,7 +289,7 @@ public class MainActivity extends AppCompatActivity implements SurfaceHolder.Cal
                                 }
                                 editor.apply();
                                 Toast.makeText(MainActivity.this,
-                                        getString(R.string.delText) + String.join(getString(R.string.sepText), str) + getString(R.string.delSuccess),
+                                        getString(R.string.delToastText) + String.join(getString(R.string.sepText), str) + getString(R.string.delSuccess),
                                         Toast.LENGTH_LONG).show();
                             }
                         }

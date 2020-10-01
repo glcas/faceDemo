@@ -9,14 +9,15 @@
     <string name="hintName">在此输入您的姓名</string>
     <string name="addButton">添加</string>
     <string name="noFaceToast">未找到人脸，请您尽量正视屏幕！</string>
-    <string name="existedToast">您的面部信息已在数据库中，请勿重复添加！</string>
+    <string name="existedToast">请勿重复添加</string>
     <string name="addSuccessToast">添加成功</string>
     <string name="emptyNameToast">请输入您的姓名</string>
     <string name="cancel_text">取消</string>
     <string name="noInfo">您尚未存储任何面部信息</string>
     <string name="selectFaces">请选择想要删除的面部信息：</string>
-    <string name="delText">已将</string>
+    <string name="delText">删除</string>
     <string name="noChosenText">您没有选中任何一个面部信息！</string>
     <string name="delSuccess">的面部信息删除</string>
     <string name="sepText">、</string>
+    <string name="delToastText">已将</string>
 </resources>
