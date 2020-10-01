@@ -1,25 +1,22 @@
 <resources>
     <string name="app_name">人脸识别Demo</string>
-    <string name="action_settings">Settings</string>
-    <!-- Strings used for fragments for navigation -->
-    <string name="first_fragment_label">First Fragment</string>
-    <string name="second_fragment_label">Second Fragment</string>
-    <string name="next">Next</string>
-    <string name="previous">Previous</string>
-
-    <string name="hello_first_fragment">Hello first fragment</string>
-    <string name="hello_second_fragment">Hello second fragment. Arg: %1$s</string>
     <string name="addFace">添加面部信息</string>
     <string name="editFace">删除面部信息</string>
-    <string name="havingFaces">已有面部信息</string>
     <string name="alertAddTitle">添加您的面部信息</string>
-    <string name="dialog_btn_confirm_text">确定</string>
+    <string name="confirm_text">确定</string>
     <string name="dialog_add_content">添加时请保证您的面部在屏幕中完整可见</string>
     <string name="addTitle">请输入您的姓名：</string>
-    <string name="hintName">在此输入您的姓名 </string>
+    <string name="hintName">在此输入您的姓名</string>
     <string name="addButton">添加</string>
     <string name="noFaceToast">未找到人脸，请您尽量正视屏幕！</string>
     <string name="existedToast">您的面部信息已在数据库中，请勿重复添加！</string>
     <string name="addSuccessToast">添加成功</string>
     <string name="emptyNameToast">请输入您的姓名</string>
+    <string name="cancel_text">取消</string>
+    <string name="noInfo">您尚未存储任何面部信息</string>
+    <string name="selectFaces">请选择想要删除的面部信息：</string>
+    <string name="delText">已将</string>
+    <string name="noChosenText">您没有选中任何一个面部信息！</string>
+    <string name="delSuccess">的面部信息删除</string>
+    <string name="sepText">、</string>
 </resources>

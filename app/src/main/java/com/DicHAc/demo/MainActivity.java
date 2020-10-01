@@ -16,6 +16,7 @@ import android.graphics.Paint;
 import android.graphics.PixelFormat;
 import android.graphics.PorterDuff;
 import android.media.Image;
+import android.os.Build;
 import android.os.Bundle;
 import android.util.Size;
 import android.view.Menu;
@@ -25,6 +26,7 @@ import android.view.SurfaceView;
 import android.widget.Toast;
 
 import androidx.annotation.NonNull;
+import androidx.annotation.RequiresApi;
 import androidx.appcompat.app.AlertDialog;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.appcompat.widget.Toolbar;
@@ -248,14 +250,14 @@ public class MainActivity extends AppCompatActivity implements SurfaceHolder.Cal
         AlertDialog.Builder multiChoiceDialog =
                 new AlertDialog.Builder(MainActivity.this);
         if (items.length == 0) {
-            multiChoiceDialog.setTitle("您尚未存储任何面部信息");
-            multiChoiceDialog.setNegativeButton("确定", new DialogInterface.OnClickListener() {
+            multiChoiceDialog.setTitle(R.string.noInfo);
+            multiChoiceDialog.setNegativeButton(R.string.confirm_text, new DialogInterface.OnClickListener() {
                 @Override
                 public void onClick(DialogInterface dialogInterface, int i) {
                 }
             });
         } else {
-            multiChoiceDialog.setTitle("请选择想要删除的面部信息：");
+            multiChoiceDialog.setTitle(R.string.selectFaces);
             multiChoiceDialog.setMultiChoiceItems(items, initChoiceSets,
                     new DialogInterface.OnMultiChoiceClickListener() {
                         @Override
@@ -268,14 +270,15 @@ public class MainActivity extends AppCompatActivity implements SurfaceHolder.Cal
                             }
                         }
                     });
-            multiChoiceDialog.setPositiveButton("删除",
+            multiChoiceDialog.setPositiveButton(R.string.delText,
                     new DialogInterface.OnClickListener() {
+                        @RequiresApi(api = Build.VERSION_CODES.O)
                         @Override
                         public void onClick(DialogInterface dialog, int which) {
                             int size = yourChoices.size();
                             if (size == 0) {
                                 Toast.makeText(MainActivity.this,
-                                        "您没有选中任何一个面部信息！",
+                                        R.string.noChosenText,
                                         Toast.LENGTH_LONG).show();
                             } else {
                                 ArrayList<String> str = new ArrayList();
@@ -286,12 +289,12 @@ public class MainActivity extends AppCompatActivity implements SurfaceHolder.Cal
                                 }
                                 editor.apply();
                                 Toast.makeText(MainActivity.this,
-                                        "已将" + String.join("、", str) + "的面部信息删除",
+                                        getString(R.string.delText) + String.join(getString(R.string.sepText), str) + getString(R.string.delSuccess),
                                         Toast.LENGTH_LONG).show();
                             }
                         }
                     });
-            multiChoiceDialog.setNegativeButton("取消",
+            multiChoiceDialog.setNegativeButton(R.string.cancel_text,
                     new DialogInterface.OnClickListener() {
                         @Override
                         public void onClick(DialogInterface dialogInterface, int i) {
