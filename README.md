@@ -1,6 +1,6 @@
 # faceDemo
 
-![I'm coming to code!](/images/写代码了.jpeg)
+![演示图片](/images/1174.jpg)
 
 ## Features
 
