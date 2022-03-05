@@ -1,6 +1,6 @@
 # faceDemo
 
-![I'm coming to code!](images/写代码了.jpeg)
+A demo of real-time face recognition on Android.
 
 ## Features
 
